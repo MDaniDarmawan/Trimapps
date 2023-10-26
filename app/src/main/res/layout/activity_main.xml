@@ -20,4 +20,34 @@
       app:mbn_shadowColor="#1f212121"
       />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:startIconDrawable="@drawable/nama_pengguna"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/et_password"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/poppins_mediumitalic"
+          android:hint="Masukkan Nama Pengguna"
+          android:inputType="textPassword"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+  <EditText
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      android:layout_below="@+id/til_password"
+      android:layout_marginTop="19dp"
+      android:hint="@string/app_name"
+      android:inputType="textPassword"
+      android:textSize="14sp"/>
+
 </RelativeLayout>
