@@ -70,4 +70,7 @@ dependencies {
     testImplementation("androidx.room:room-testing:$room_version")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.room:room-testing:2.5.2")
+
+    //navigation bar
+    implementation ("com.google.android.material:material:1.1.0")
 }

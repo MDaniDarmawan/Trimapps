@@ -50,4 +50,22 @@
       android:inputType="textPassword"
       android:textSize="14sp"/>
 
+  <!--ini bisa dihapus sama menu dan nav menunya-->
+  <FrameLayout
+      android:id="@+id/fl_wrapper"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_above="@+id/bottom_navigation"/>
+
+  <com.google.android.material.bottomnavigation.BottomNavigationView
+      android:id="@+id/bottom_navigation"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:background="?android:attr/windowBackground"
+      app:itemBackground="@color/coklat"
+      app:itemIconTint="#fff"
+      app:itemTextColor="#fff"
+      app:menu="@menu/nav_menu"/>
+  <!--sampek sini atau kode ini bisa dipindahkan ke home-->
 </RelativeLayout>
