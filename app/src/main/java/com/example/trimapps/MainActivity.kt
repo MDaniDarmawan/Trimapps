@@ -1,23 +1,39 @@
 package com.example.trimapps
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation
 import com.example.trimapps.fragments.favoriteFragment
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
     protected val home: Int = 1
     protected val profile: Int = 2
 
+    private lateinit var auth: FirebaseAuth
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         //ini bisa dihapus juga kalo error
         val favoriteFragment = favoriteFragment()
 
         makeCurrentFragment(favoriteFragment)
+
+        // + hilmy
+        auth = FirebaseAuth.getInstance()
+        if(auth.currentUser == null){
+            val intent = Intent (this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+
+
 
 
 
