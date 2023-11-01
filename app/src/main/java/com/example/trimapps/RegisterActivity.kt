@@ -34,26 +34,26 @@ class RegisterActivity : AppCompatActivity() {
         registerButton = findViewById(R.id.button_daftar)
         loginTextView = findViewById(R.id.masuk)
 
-                    // Tambahkan event listener untuk tombol register
-                    registerButton.setOnClickListener {
-                        val username = usernameEditText.text.toString()
-                        val email = emailEditText.text.toString()
-                        val githubUsername = githubUsernameEditText.text.toString()
-                        val password = passwordEditText.text.toString()
-                        if (username.isNotEmpty() && email.isNotEmpty() && githubUsername.isNotEmpty() && password.isNotEmpty()) {
-                            Toast.makeText(this, "Pendaftaran Berhasil!", Toast.LENGTH_SHORT).show()
-                        } else {
-                            Toast.makeText(this, "Pendaftaran Gagal!", Toast.LENGTH_SHORT).show()
-                        }
+        // Tambahkan event listener untuk tombol register
+        registerButton.setOnClickListener {
+            val username = usernameEditText.text.toString()
+            val email = emailEditText.text.toString()
+            val githubUsername = githubUsernameEditText.text.toString()
+            val password = passwordEditText.text.toString()
+            if (username.isNotEmpty() && email.isNotEmpty() && githubUsername.isNotEmpty() && password.isNotEmpty()) {
+                Toast.makeText(this, "Pendaftaran Berhasil!", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Pendaftaran Gagal!", Toast.LENGTH_SHORT).show()
+            }
 
-                        // Lakukan validasi data jika diperlukan
+            // Lakukan validasi data jika diperlukan
 
-                        // Lakukan operasi pendaftaran atau penyimpanan data ke server atau database
-                    }
-                            loginTextView.setOnClickListener {
-                        // Arahkan ke halaman pendaftaran
-                        val intent = Intent(this, LoginActivity::class.java)
-                        startActivity(intent)
-                    }
+            // Lakukan operasi pendaftaran atau penyimpanan data ke server atau database
+        }
+        loginTextView.setOnClickListener {
+            // Arahkan ke halaman pendaftaran
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
