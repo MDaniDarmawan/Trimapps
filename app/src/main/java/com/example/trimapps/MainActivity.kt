@@ -1,35 +1,36 @@
 package com.example.trimapps
 
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation
+import com.example.trimapps.Home.HomeFragment
+import com.example.trimapps.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
-
-    protected val home: Int = 1
-    protected val profile: Int = 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        @SuppressLint("MissingInflated", "LocalSuppress")
-        val bottomNavigation = findViewById<MeowBottomNavigation>(R.id.meowBottomNavigation)
-        bottomNavigation.add(MeowBottomNavigation.Model(home, R.drawable.baseline_home_24))
-        bottomNavigation.add(MeowBottomNavigation.Model(profile, R.drawable.baseline_person_24))
+        setFragment(HomeFragment.newInstance())
+        val navigation = findViewById<MeowBottomNavigation>(R.id.navigation)
+        navigation.add(MeowBottomNavigation.Model(1, R.drawable.baseline_home_24))
+        navigation.add(MeowBottomNavigation.Model(2, R.drawable.baseline_person_24))
 
-        bottomNavigation.setOnShowListener {
-        }
-
-        bottomNavigation.setOnClickMenuListener {
-            val model = it
-            val name = when (model.id) {
-                home -> "Home"
-                profile -> "Profile"
+        navigation.setOnClickMenuListener {
+            when (it.id) {
+                1 -> setFragment(HomeFragment.newInstance())
+                2 -> setFragment(ProfileFragment.newInstance())
                 else -> ""
             }
         }
+        navigation.show(1)
+    }
+    fun setFragment(fragment: Fragment){
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.frame_layout,fragment,"mainActivity")
+            .commit()
     }
 }
