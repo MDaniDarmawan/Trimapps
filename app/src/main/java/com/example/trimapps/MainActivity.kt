@@ -39,36 +39,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        buttomNavigation()
+
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
 
 
-    }
 
-    private fun buttomNavigation() {
-        fm.beginTransaction().add(com.google.android.material.R.id.container, fragmenthome)
-            .show(fragmenthome).commit()
-        fm.beginTransaction().add(com.google.android.material.R.id.container, fragmentfavorit)
-            .hide(fragmentfavorit).commit()
-        fm.beginTransaction().add(com.google.android.material.R.id.container, fragmentprofil)
-            .hide(fragmentprofil).commit()
+    @SuppressLint("MissingInflated", "LocalSuppress")
+    val bottomNavigation = findViewById<MeowBottomNavigation>(R.id.meowBottomNavigation)
+    bottomNavigation.add(MeowBottomNavigation.Model(home, R.drawable.baseline_home_24))
+    bottomNavigation.add(MeowBottomNavigation.Model(profile, R.drawable.baseline_person_24))
 
-        buttomNavigationView = binding.nav
-        menu = buttomNavigationView.menu
-        menuItem = menu.getItem(0)
-        menuItem.isChecked = true
 
         buttomNavigationView.setOnNavigationItemReselectedListener {
             when (it.itemId){
                 R.id.ic_home  -> {
                     callFragment(0,fragmenthome)
                 }
-                R.id.ic_favorite -> {
-                    callFragment(1,fragmentfavorit)
-                }
                 R.id.profil -> {
-                    callFragment(2,fragmentprofil)
+                    callFragment(1,fragmentprofil)
                 }
             }
             false
