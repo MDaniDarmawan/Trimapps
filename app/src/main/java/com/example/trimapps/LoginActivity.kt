@@ -2,45 +2,45 @@ package com.example.trimapps
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.trimapps.MainActivity
 import com.example.trimapps.databinding.ActivityLoginBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var emailEditText: EditText
-    private lateinit var passwordEditText: EditText
-    private lateinit var loginButton: Button
-    private lateinit var registerTextView: TextView
+    private lateinit var binding: ActivityLoginBinding
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        // Inisialisasi elemen UI
-        emailEditText = findViewById(R.id.et_email)
-        passwordEditText = findViewById(R.id.et_kata_sandi)
-        loginButton = findViewById(R.id.button_masuk)
-        registerTextView = findViewById(R.id.daftar)
+        firebaseAuth = FirebaseAuth.getInstance()
 
-        // Tambahkan event listener untuk tombol login
-        loginButton.setOnClickListener(View.OnClickListener {
-            if (emailEditText.text.toString() == "user" && passwordEditText.text.toString() == "1234") {
-                Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show()
 
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-            } else {
-                Toast.makeText(this, "Login Failed!", Toast.LENGTH_SHORT).show()
+        binding.buttonMasuk.setOnClickListener{
+            val email = binding.etEmail.text.toString()
+            val pass = binding.etKataSandi.text.toString()
+
+
+            if (email.isNotEmpty() && pass.isNotEmpty()){
+
+                firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener{
+                    if (it.isSuccessful){
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                    }else{
+                        Toast.makeText(this, it.exception.toString() , Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+            }else{
+                Toast.makeText(this, "Kolom harus diisi semua !!!", Toast.LENGTH_SHORT).show()
             }
-        })
-        registerTextView.setOnClickListener {
-            // Arahkan ke halaman pendaftaran
+        }
+        binding.daftar.setOnClickListener{
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
