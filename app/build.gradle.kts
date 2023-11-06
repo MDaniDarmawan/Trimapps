@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-parcelize")
+    id ("kotlin-kapt")
     id("com.google.gms.google-services")
 
 }
@@ -60,7 +61,6 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation ("androidx.room:room-runtime:2.2.5")
     annotationProcessor ("androidx.room:room-compiler:2.2.5")
-    implementation("com.etebarian:meow-bottom-navigation:1.2.0")
     implementation("androidx.core:core-splashscreen:1.0.1")
 
     val room_version = "2.6.0"

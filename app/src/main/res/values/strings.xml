@@ -6,4 +6,18 @@
     <string name="title_favorit">Favorit</string>
     <string name="title_profile">Profile</string>
     <string name="title_home">Home</string>
+    <string name="title_menu_1">Halooo</string>
+    <string name="title_menu_2">Halooo</string>
+    <string name="title_menu_3">Halooo</string>
+    <string name="title_menu_4">Inilah</string>
+    <string name="desc_menu_1">Perkenalkan, nama saya Muhammad Khilmy</string>
+    <string name="desc_menu_2">Perkenalkan, nama saya Muhammad Dani Darmawan</string>
+    <string name="desc_menu_3">Perkenalkan, nama saya Vito Dwi Cahyadi</string>
+    <string name="desc_menu_4">(: Aplikasi kami bertiga :)</string>
+    <string name="learn_now">Masuk Sekarang</string>
+    <string name="gambar_hilmy">Gambar hilmy</string>
+    <string name="gambar_dnai">Gambar dani</string>
+    <string name="gambar_vito">Gambar vito</string>
+    <string name="gambar_gabungan">Gambar gabungan</string>
+    <string name="gambar_trimapps">Gambar trimapps</string>
 </resources>
