@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/judul_masuk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MASUK"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="40sp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_email"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan Email"
+        app:helperTextTextColor="@color/red"
+        app:startIconDrawable="@drawable/mail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/judul_masuk">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_kata_sandi"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan Kata Sandi"
+        android:layout_marginTop="30dp"
+        app:passwordToggleEnabled="true"
+        app:helperTextTextColor="@color/red"
+        app:counterMaxLength="16"
+        app:counterEnabled="true"
+        app:startIconDrawable="@drawable/kata_sandi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/til_email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_kata_sandi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button_masuk"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:text="MASUK"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppins_bold"
+        android:background="@drawable/background_tombol"
+        android:layout_marginTop="20sp"
+        app:layout_constraintEnd_toEndOf="@id/til_kata_sandi"
+        app:layout_constraintTop_toBottomOf="@id/til_kata_sandi"
+        app:layout_constraintStart_toStartOf="@id/til_kata_sandi"/>
+
+    <TextView
+        android:id="@+id/belum_punya_akun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Belum punya akun ?"
+        android:textSize="12sp"
+        android:fontFamily="@font/poppins_lightitalic"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="105dp"
+        app:layout_constraintStart_toStartOf="@id/button_masuk"
+        app:layout_constraintTop_toBottomOf="@id/button_masuk"/>
+
+    <TextView
+        android:id="@+id/daftar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Daftar"
+        android:textSize="12sp"
+        android:fontFamily="@font/poppins_bolditalic"
+        android:textColor="@color/red"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/belum_punya_akun"
+        app:layout_constraintTop_toBottomOf="@id/button_masuk"/>
+
+    <ImageView
+        android:id="@+id/logo_aplikasi"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="50dp"
+        app:srcCompat="@drawable/group_111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

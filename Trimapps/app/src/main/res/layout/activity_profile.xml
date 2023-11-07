@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="0dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/profile_picture"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="36dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/hilmy" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nama_pengguna"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bn_background"
+                android:drawableStart="@drawable/nama_pengguna"
+                android:drawableTint="@color/black"
+                android:drawablePadding="20dp"
+                android:paddingStart="20dp"
+                android:text="Muhammad Khilmi"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_medium"
+                style="@android:style/Widget.Button"
+                android:textAlignment="viewStart" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="32dp"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_medium"
+                style="@android:style/Widget.Button"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bn_background"
+                android:drawableStart="@drawable/mail"
+                android:drawableTint="@color/black"
+                android:drawablePadding="20dp"
+                android:paddingStart="20dp"
+                android:text="khilmi23@gmail.com"
+                android:textAlignment="viewStart" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/github"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_medium"
+                style="@android:style/Widget.Button"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bn_background"
+                android:drawableStart="@drawable/github"
+                android:drawableTint="@color/black"
+                android:paddingStart="20dp"
+                android:text="KhilmiGakpakeE"
+                android:drawablePadding="20dp"
+                android:textAlignment="viewStart" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/kata_sandi"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="32dp"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_medium"
+                style="@android:style/Widget.Button"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bn_background"
+                android:drawableStart="@drawable/kata_sandi"
+                android:drawableTint="@color/black"
+                android:drawablePadding="20dp"
+                android:paddingStart="20dp"
+                android:text="TifC22"
+                android:textAlignment="viewStart" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/pengaturan"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="32dp"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_medium"
+                style="@android:style/Widget.Button"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bn_background"
+                android:drawableStart="@drawable/pengaturan"
+                android:drawableTint="@color/black"
+                android:drawablePadding="20dp"
+                android:paddingStart="20dp"
+                android:text="Pengaturan"
+                android:textAlignment="viewStart" />
+
+            <Button
+                android:id="@+id/keluar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:width="250dp"
+                android:background="@drawable/buttom_shape"
+                android:text="KELUAR"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="32dp"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:fontFamily="@font/poppins_bold"/>
+        </LinearLayout>
+
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
