@@ -63,6 +63,10 @@ dependencies {
     annotationProcessor ("androidx.room:room-compiler:2.2.5")
     implementation("androidx.core:core-splashscreen:1.0.1")
 
+    implementation ("com.google.code.gson:gson:2.10.1")
+    implementation("io.coil-kt:coil:1.2.1")
+
+
     val room_version = "2.6.0"
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
