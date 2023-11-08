@@ -20,4 +20,9 @@
     <string name="gambar_vito">Gambar vito</string>
     <string name="gambar_gabungan">Gambar gabungan</string>
     <string name="gambar_trimapps">Gambar trimapps</string>
+    <string name="detail">Detail</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="favorite">Favorite</string>
+    <string name="setting">Setting</string>
 </resources>
