@@ -1,4 +1,4 @@
-package com.example.trimapps.Home.remote
+package com.example.trimapps.home.remote
 
 
 import okhttp3.OkHttpClient
@@ -8,7 +8,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 import java.util.concurrent.TimeUnit
 
-object ApiClient {val okHttp = OkHttpClient.Builder()
+object ApiClient {
+    val okHttp = OkHttpClient.Builder()
     .apply {
         val loggingInterceptor = HttpLoggingInterceptor()
         loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
